@@ -10,7 +10,7 @@ int lightIntensity;
 int LEDPin = 13;
 int laserPin = 1;
 int pos;
-
+double sleepTime = 600000; // 10 minutes between reads
 void reboot() 
 {
   Serial.println("  Restarting Device");
@@ -120,4 +120,6 @@ void loop()
   {
     pos = 0;
   }
+  
+  LowPower.deepSleep(sleepTime);
 }
